@@ -1,0 +1,77 @@
+body {
+  /* line-height add spaces in between labels and input box and other divs */
+  font-family: "Raleway", sans-serif;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+#form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.form-wrap {
+  background: #fbfbfb;
+  padding:10px 25px;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap .form-group {
+  margin-top:15px;
+  font-size: 12pt;
+}
+
+/*
+Label should be turned into a block element because I want label above input type in blocks
+*/
+.form-wrap .form-group label {
+  display:block;
+  color: #333;
+}
+
+/* padding is needed to make it bigger heigtwise and border for cleaner white look */
+.form-wrap .form-group input {
+  width: 100%;
+  padding: 5px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-wrap button {
+  display:block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #1688e0;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.form-wrap button:hover {
+  background-color: #1062a1;
+
+}
+
+.form-wrap .bottom-text {
+  margin-top: 20px;
+  font-size: 10pt;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+footer a {
+  color:black;
+}
