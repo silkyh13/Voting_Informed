@@ -1,7 +1,8 @@
 import React from 'react';
 import Home from './Home';
 import Issues from './Issues';
-import Users from './Users';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,21 +43,22 @@ class App extends React.Component {
                     } to="/issues">Issues</Link>
                   </li>
                   <li>
-                    <Link id="users" onClick={this.handleChange} className={
-                      this.state.currentId === 'users' ? 'current' : 'none'
-                    } to="/users">Users</Link>
+                    <Link id="sign-up" onClick={this.handleChange} className={
+                      this.state.currentId === 'sign-up' ? 'current' : 'none'
+                    } to="/signup">Sign Up</Link>
                   </li>
                 </ul>
             </div>
           </div>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/issues">
               <Issues />
             </Route>
-            <Route path="/users">
-              <Users />
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/SignUp">
+              <SignUp />
             </Route>
             <Route path="/">
               <Home />

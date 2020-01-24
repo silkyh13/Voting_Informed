@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './Home.css';
 import homepage1 from "./img/about.jpeg"
 class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      string: ""
+    }
+  }
 
   render() {
     return (
@@ -32,3 +38,45 @@ class Home extends Component {
 }
 
 export default Home;
+
+// return (
+//   <div id="form-container">
+//     <div className="form-wrap">
+//       <h1>Sign Up</h1>
+//       <div class="form-group">
+//         <label>First Name </label>
+//         <input type="text" id="firstName" onChange={this.handleRegister}></input>
+//       </div>
+
+//       <div class="form-group">
+//         <label>Last Name </label>
+//         <input type="text" id="lastName" onChange={this.handleRegister}></input>
+//       </div>
+
+//       <div class="form-group">
+//         <label>Email </label>
+//         <input type="email" id="email" onChange={this.handleRegister}></input>
+//       </div>
+
+//       <div class="form-group">
+//       <label>Password </label>
+//       <input type="password" id="password" onChange={this.handleRegister}></input>
+//       </div>
+
+//       <div class="form-group">
+//       <label>Confirm Password</label>
+//       <input type="password" id="confirmPassword" onChange={this.handleRegister}></input>
+//       </div>
+
+//       <button onClick={this.submitForm}>Sign Up</button>
+//       <p class="bottom-text">
+//         By clicking the Sign Up button, you agree to our
+//         <a href="#" style={{color: "blue"}}> Terms & Conditions</a> and
+//         <a href="#" style={{color: "blue"}}> Privacy Policy</a>
+//       </p>
+//     </div>
+//     <footer>
+//     <p>Already have an account? <a href="#" >Login Here</a></p>
+//   </footer>
+//   </div>
+// );

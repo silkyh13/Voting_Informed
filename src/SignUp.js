@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import './Users.css'
+import './SignUp.css'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
+  Link
 } from "react-router-dom";
 
-class Users extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +14,7 @@ class Users extends Component {
       password: '',
       confirmPassword: ''
     }
-    let match = useRouteMatch();
+
     this.handleRegister = this.handleRegister.bind(this);
   }
 
@@ -37,7 +33,6 @@ class Users extends Component {
 
   render() {
 
-    console.log(this.state)
     return (
       <div id="form-container">
         <div className="form-wrap">
@@ -75,11 +70,11 @@ class Users extends Component {
           </p>
         </div>
         <footer>
-        <p>Already have an account? <a href="#" >Login Here</a></p>
+        <p>Already have an account? <Link to="/signin">Sign in Here</Link></p>
       </footer>
       </div>
     );
   }
 }
 
-export default Users;
+export default Signup;
