@@ -10,8 +10,8 @@ class Issues extends Component {
         <div className="issues-info">
           <div className="info-left">
             <h3>Issues</h3>
-            <h2>sdsdsd</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, animi cupiditate. Excepturi nostrum omnis modi libero suscipit quibusdam, eveniet quidem fuga quod repudiandae, nisi aperiam cum culpa iusto alias itaque.</p>
+            <h2>Bernie Sanders’s Stance</h2>
+            <p>I’m running for president so that, when we are in the White House, the movement we build together can achieve economic, racial, social and environmental justice for all.</p>
           </div>
         </div>
 

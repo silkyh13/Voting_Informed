@@ -8,9 +8,8 @@
 
 .issues-info {
   height: 600px;
-  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), transparent, transparent), url("./img/issues1.jpeg") no-repeat center center/cover;
+  background: linear-gradient(to right, rgb(255, 255, 255), transparent, transparent,transparent, transparent), url("./img/issues1.jpeg") no-repeat center center/cover;
   padding-top: 100px;
-  opacity: 0.9;
 }
 
 .l-heading {
