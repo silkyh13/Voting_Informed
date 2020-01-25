@@ -37,33 +37,33 @@ class Signup extends Component {
       <div id="form-container">
         <div className="form-wrap">
           <h1>Sign Up</h1>
-          <div class="form-group">
+          <div className="form-group">
             <label>First Name </label>
             <input type="text" id="firstName" onChange={this.handleRegister}></input>
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
             <label>Last Name </label>
             <input type="text" id="lastName" onChange={this.handleRegister}></input>
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
             <label>Email </label>
             <input type="email" id="email" onChange={this.handleRegister}></input>
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
           <label>Password </label>
           <input type="password" id="password" onChange={this.handleRegister}></input>
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
           <label>Confirm Password</label>
           <input type="password" id="confirmPassword" onChange={this.handleRegister}></input>
           </div>
 
           <button onClick={this.submitForm}>Sign Up</button>
-          <p class="bottom-text">
+          <p className="bottom-text">
             By clicking the Sign Up button, you agree to our
             <a href="#" style={{color: "blue"}}> Terms & Conditions</a> and
             <a href="#" style={{color: "blue"}}> Privacy Policy</a>

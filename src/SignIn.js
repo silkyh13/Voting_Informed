@@ -22,12 +22,12 @@ export default class SignIn extends Component {
         <div className="form-wrap">
           <h1>Sign In</h1>
 
-          <div class="form-group">
+          <div className="form-group">
             <label>Email </label>
             <input type="email" id="email" onChange={this.handleSignIn}></input>
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
             <label>Password </label>
             <input type="password" id="password" onChange={this.handleSignIn}></input>
           </div>
