@@ -5,7 +5,7 @@
 }
 
 html, body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Noto Serif', serif;
   line-height: 1.7em;
   background: #2B9CD9;
 }
@@ -38,6 +38,8 @@ p {
 /* letters of the Home etc */
 #navbar a {
   color: #2B9CD9;
+  font-family: 'Noto Serif', serif;
+
 }
 /* Bernie logo */
 #navbar .logo {
