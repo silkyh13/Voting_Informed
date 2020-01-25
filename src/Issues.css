@@ -1,0 +1,38 @@
+#issues {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+  font-family: 'Shanti';
+}
+
+.issues-info {
+  height: 600px;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), transparent, transparent), url("./img/issues1.jpeg") no-repeat center center/cover;
+  padding-top: 100px;
+  opacity: 0.9;
+}
+
+.l-heading {
+  font-size: 40px;
+}
+#issues .info-left {
+  float: left;
+  width: 30%;
+  min-height: 100%;
+  padding: 30px;
+}
+#issues .info-left h3{
+  color: white;
+  font-size: 20px;
+}
+#issues .info-left h2 {
+  color: white;
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+#issues .info-left p {
+  color: white;
+  font-size: 20px;
+}
+.py-3 { padding: 30px 0; }

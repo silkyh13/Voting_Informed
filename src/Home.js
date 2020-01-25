@@ -12,8 +12,6 @@ class Home extends Component {
   render() {
     return (
       <div className="about">
-
-
         <div id="showcase">
           <img src={homepage1} alt="" />
         </div>
