@@ -6,17 +6,26 @@ class Issues extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false,
-      issue: ''
+      obj: {
+        'Medicare for All': false,
+        'Green New Deal': false,
+        'Expand Social Security': false,
+        'Housing for All': false
+      }
     }
     this.toggle = this.toggle.bind(this)
   }
 
   toggle (e) {
+    //create copy of the obj
+    let newObject = {...this.state.obj};
+    //changing its state
+    newObject[e.target.getAttribute('id')] = !this.state.obj[e.target.getAttribute('id')];
+
     this.setState({
-      toggle:!this.state.toggle,
-      issue: e.target.getAttribute('id')
+      obj: newObject
     })
+
   }
   render() {
     return (
@@ -38,7 +47,7 @@ class Issues extends Component {
               <hr></hr>
               <div className="issues-section">
               <div className="issue-name" id={issue} onClick={this.toggle}>{issue}</div>
-              <ul id={issue} className={(this.state.toggle && this.state.issue === issue)? 'visible': 'sub-nav'}>
+              <ul id={issue} className={(this.state.obj[issue])? 'visible': 'invisible'}>
                 {data[issue].map((item, index) =>
                   <li key={index}><i className="far fa-check-square fa-1x"></i> {item}</li>
                 )}

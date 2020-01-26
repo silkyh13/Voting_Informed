@@ -48,7 +48,7 @@
 .issue-name {
   cursor: pointer;
 }
-ul.sub-nav {
+ul.invisible {
   display: none;
 }
 
@@ -60,7 +60,4 @@ ul.visible {
   width: 100%;
   font-size: 15px;
 }
-.fa-check-square {
-  color: #333;
-  padding-right: 8px;
-}
+
