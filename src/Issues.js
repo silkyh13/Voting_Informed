@@ -46,7 +46,7 @@ class Issues extends Component {
             <div key={i}>
               <hr></hr>
               <div className="issues-section">
-              <div className="issue-name" id={issue} onClick={this.toggle}>{issue}</div>
+              <div className="issue-name" id={issue} onClick={this.toggle}>{issue}<i class="fas fa-chevron-down"></i></div>
               <ul id={issue} className={(this.state.obj[issue])? 'visible': 'invisible'}>
                 {data[issue].map((item, index) =>
                   <li key={index}><i className="far fa-check-square fa-1x"></i> {item}</li>
