@@ -3,6 +3,7 @@ import './SignUp.css'
 import {
   Link
 } from "react-router-dom";
+import firebase from './firebase.js';
 
 class Signup extends Component {
   constructor(props) {
@@ -23,10 +24,15 @@ class Signup extends Component {
       [event.target.id]: event.target.value,
     });
   }
-  submitForm() {
-    // this.props.addAttendee(this.state);
-    if (this.state.password === this.confirmPassword) {
-      console.log(this.state)
+  submitForm = () => {
+    if (this.state.password === this.state.confirmPassword) {
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+      return <div> My Protected Component </div>
     }
 
   }
