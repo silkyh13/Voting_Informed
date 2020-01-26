@@ -52,7 +52,6 @@
 }
 .issue-name:hover {
   color: transparent;
-  /* font-size: 50px; */
   -webkit-text-stroke: 1px rgb(63, 31, 206);
 }
 .fa-chevron-down {
@@ -70,5 +69,36 @@ ul.visible {
   height: 100%;
   width: 100%;
   font-size: 16px;
+  visibility: hidden;
+  animation: 0s linear 2.3s forwards visi;
+}
+@keyframes visi {
+  to {
+    visibility: visible;
+
+  }
 }
 
+
+/* ul.visible:hover {
+  text-indent: 0;
+  color: white;
+  transform: translateX(0px);
+  opacity: 1;
+} */
+
+/* body {
+  background: black;
+  animation: color-me-in 5s;
+}
+
+@keyframes color-me-in {
+
+  0% {
+    background: orange;
+  }
+
+  100% {
+    background: black;
+  }
+} */
