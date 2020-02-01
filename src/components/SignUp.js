@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './SignUp.css'
+import '../styles/SignUp.css';
 import {
   Link
 } from "react-router-dom";
-import firebase from './firebase.js';
 
 class Signup extends Component {
   constructor(props) {
@@ -25,15 +24,15 @@ class Signup extends Component {
     });
   }
   submitForm = () => {
-    if (this.state.password === this.state.confirmPassword) {
-      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
-      return <div> My Protected Component </div>
-    }
+    // if (this.state.password === this.state.confirmPassword) {
+    //   firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // ...
+    //   });
+    //   return <div> My Protected Component </div>
+    // }
 
   }
 

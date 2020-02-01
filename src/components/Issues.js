@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Issues.css';
+import '../styles/Issues.css';
 import data from "./data.js";
 
 class Issues extends Component {

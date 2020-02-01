@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Home.css';
-import homepage1 from "./img/about.jpeg"
+import '../styles/Home.css';
+import homepage1 from "../img/about.jpeg"
 class Home extends Component {
   constructor(props) {
     super(props)
