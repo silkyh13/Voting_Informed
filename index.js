@@ -11,6 +11,7 @@ const User = require("./routes/user");
 const passport = require('./passport');//functions includes: authenticate requests and sessions
 
 //needs to know database in order to create session
+
 const options = {
   host: process.env.DB_HOST,
   port: 3306,

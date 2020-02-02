@@ -1,8 +1,10 @@
 import React from 'react';
 import Home from './Home';
+import Messenger from './Messenger';
 import Issues from './Issues';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,14 +16,27 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId:'home'
+      currentId:'home',
+      user: null
     }
     this.handleChange = this.handleChange.bind(this);
   }
+
+  componentDidMount() {
+    axios.get("/api/user")
+    .then(res => {
+      this.setState({
+        user: res.data
+      })
+    })
+    .catch(err => console.error(err));
+  }
+
   handleChange(event) {
     let e = event.target.getAttribute('id');
     this.setState((state) => ({ currentId: e }))
   }
+
   render() {
     console.log(this.state.currentId)
     return (
@@ -51,11 +66,14 @@ class App extends React.Component {
             </div>
           </div>
           <Switch>
+            <Route path="/messenger">
+              <Messenger user={this.state.user} />
+            </Route>
             <Route path="/issues">
               <Issues />
             </Route>
             <Route path="/signin">
-              <SignIn />
+              <SignIn user={this.state.user}/>
             </Route>
             <Route path="/SignUp">
               <SignUp />

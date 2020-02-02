@@ -11,7 +11,7 @@ const registerUser = (req, res) => {
 }
 
 const getUser = (req, res) => {
-    req.user ? res.send(req.user) : res.status(401).send("User not logged in");
+    req.user ? res.send(req.user) : res.send(null);
 }
 
 module.exports = {
