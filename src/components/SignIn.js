@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import '../styles/SignIn.css';
-
+import signInImage from "../img/about1.jpg"
 export default class SignIn extends Component {
 
   constructor(props) {
@@ -52,6 +52,7 @@ export default class SignIn extends Component {
   render () {
 
     return (
+      <div id='sign-in'>
       <div id="sign-in-form-container">
         {this.props.user ? window.location="/messenger" :
         // sign in form
@@ -77,6 +78,9 @@ export default class SignIn extends Component {
         }
 
       </div>
+        <div className='sign-in-image'></div>
+      </div>
+
     )
   }
 }

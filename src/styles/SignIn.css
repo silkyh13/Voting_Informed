@@ -12,8 +12,8 @@ a {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
-  height: 100%;
-  margin-bottom: 18%;
+  margin-bottom: -19px;
+  /* margin-bottom: 15%; */
 }
 
 .sign-in-form-wrap {
@@ -52,7 +52,9 @@ Label should be turned into a block element because I want label above input typ
 .sign-in-form-wrap button {
   display:block;
   width: 100%;
-  padding: 10px;
+  padding: 8px;
+  font-size: 15px;
+  letter-spacing: 3.4px;
   margin-top: 30px;
   margin-bottom: 20px;
   background-color: #1688e0;
@@ -75,6 +77,12 @@ Label should be turned into a block element because I want label above input typ
   color: red;
 }
 
+.sign-in-image {
+  background: url("../img/about1.jpg") no-repeat center;
+  background-size: cover;
+  height: 290px;
+  margin-bottom: -25px;
+}
 footer {
   color: white;
   text-align: center;
