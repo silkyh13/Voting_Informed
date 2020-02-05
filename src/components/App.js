@@ -19,6 +19,7 @@ class App extends React.Component {
       currentId:'home',
       user: null
     }
+    this.componentDidMount = this.componentDidMount.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -27,6 +28,8 @@ class App extends React.Component {
     .then(res => {
       this.setState({
         user: res.data
+      }, () => {
+        console.log('who is the user?', this.state.user)
       })
     })
     .catch(err => console.error(err));
@@ -73,7 +76,7 @@ class App extends React.Component {
               <Issues />
             </Route>
             <Route path="/signin">
-              <SignIn user={this.state.user}/>
+              <SignIn user={this.state.user} componentDidMount={this.componentDidMount}/>
             </Route>
             <Route path="/SignUp">
               <SignUp />

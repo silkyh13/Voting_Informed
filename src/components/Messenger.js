@@ -31,7 +31,7 @@ export default class Messenger extends Component {
 
       <div>
         {this.state.loggedOut ? window.location.pathname="/signin" : null}
-        <h1>BTS MUTHERFUCKR</h1>
+        <h1>hi {this.props.username}</h1>
         <button onClick={this.loggedOut}>Log out</button>
 
       </div>

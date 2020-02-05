@@ -25,6 +25,7 @@ export default class SignIn extends Component {
       password: this.state.password
     })
     .then(response => {
+      this.props.componentDidMount();
       console.log(response);
     })
     .catch(error => {
@@ -41,27 +42,31 @@ export default class SignIn extends Component {
       if(isError){
         document.getElementById("password").setCustomValidity("Sign in error occurred");
       }
+
   }
   render () {
     return (
       <div id="form-container">
-        <div className="form-wrap">
-          <h1>Sign In</h1>
-          <form>
-            <div className="form-group">
-              <label>Email </label>
-              <input type="email" id="email" onChange={this.handleSignIn}></input>
-            </div>
+        {this.props.user ? window.location="/messenger" :
+          <div className="form-wrap">
+            <h1>Sign In</h1>
+            <form>
+              <div className="form-group">
+                <label>Email </label>
+                <input type="email" id="email" onChange={this.handleSignIn}></input>
+              </div>
 
-            <div className="form-group">
-              <label>Password </label>
-              <input type="password" id="password" onChange={this.handleSignIn}></input>
-            </div>
+              <div className="form-group">
+                <label>Password </label>
+                <input type="password" id="password" onChange={this.handleSignIn}></input>
+              </div>
 
-            {this.props.user ? window.location.pathname="/messenger" : <button onClick={this.submitForm}>Sign In</button>}
-          </form>
+              <button onClick={this.submitForm}>Sign In</button>
+            </form>
 
-        </div>
+          </div>
+        }
+
       </div>
     )
   }
