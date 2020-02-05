@@ -38,7 +38,7 @@ class Signup extends Component {
       })
       .then(res =>  {
         this.setState({
-          bullshit: !this.state.bullshit
+          bullshit: this.state.email
         });
         console.log(res);
       })
@@ -53,6 +53,7 @@ class Signup extends Component {
 
   render() {
     let signedUp = this.state.bullshit;
+    console.log(signedUp, this.state.email)
     return (
       <div id="form-container">
         <div className="form-wrap">
@@ -82,7 +83,7 @@ class Signup extends Component {
             <label>Confirm Password</label>
             <input type="password" id="confirmPassword" onChange={this.handleRegister}></input>
             </div>
-            {signedUp ? window.location.pathname="/signin" : <button onClick={this.submitForm} >Sign Up</button>}
+            {signedUp === this.state.email ? window.location.pathname="/signin" : <button onClick={this.submitForm} >Sign Up</button>}
           </form>
 
           <p className="bottom-text">
@@ -92,8 +93,8 @@ class Signup extends Component {
           </p>
         </div>
         <footer>
-        <p>Already have an account? <Link to="/signin">Sign in Here</Link></p>
-      </footer>
+          <p>Already have an account? <Link to="/signin">Sign in Here</Link></p>
+        </footer>
       </div>
     );
   }

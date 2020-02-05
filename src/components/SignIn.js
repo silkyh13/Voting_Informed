@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import '../styles/SignIn.css';
 
 export default class SignIn extends Component {
 
@@ -8,6 +9,7 @@ export default class SignIn extends Component {
     this.state = {
       email: '',
       password: '',
+      error: false
     }
   }
 
@@ -27,29 +29,36 @@ export default class SignIn extends Component {
     .then(response => {
       this.props.componentDidMount();
       console.log(response);
+      console.log('does it work?')
     })
     .catch(error => {
-      if(error){
-        isError=true;
-      }
-      console.log(error);
+      this.setState({
+        error: true
+      }, () => {
+        console.log('what is state of error', this.state.error)
+      })
+      console.log(error, 'did it fail');
     })
     .finally(() => {
       // window.location.reload();
       console.log(isError);
 
     });
-      if(isError){
-        document.getElementById("password").setCustomValidity("Sign in error occurred");
-      }
+      // if(isError){
+      //   document.getElementById("password").setCustomValidity("Sign in error occurred");
+      // }
 
   }
   render () {
+
     return (
-      <div id="form-container">
+      <div id="sign-in-form-container">
         {this.props.user ? window.location="/messenger" :
-          <div className="form-wrap">
+        // sign in form
+          <div className="sign-in-form-wrap">
             <h1>Sign In</h1>
+            {this.state.error ? <div className='error-message'>Incorrect password or email</div> : null}
+
             <form>
               <div className="form-group">
                 <label>Email </label>
@@ -61,7 +70,7 @@ export default class SignIn extends Component {
                 <input type="password" id="password" onChange={this.handleSignIn}></input>
               </div>
 
-              <button onClick={this.submitForm}>Sign In</button>
+              <button onClick={this.submitForm}>{this.state.error ? 'Retry' : 'Sign In'}</button>
             </form>
 
           </div>
@@ -71,4 +80,5 @@ export default class SignIn extends Component {
     )
   }
 }
+
 

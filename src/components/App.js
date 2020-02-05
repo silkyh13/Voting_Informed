@@ -85,6 +85,7 @@ class App extends React.Component {
               <Home />
             </Route>
           </Switch>
+
         </div>
       </Router>
     );

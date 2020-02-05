@@ -1,37 +1,33 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   /* line-height add spaces in between labels and input box and other divs */
   font-family: "Raleway", sans-serif;
   line-height: 1.8;
-
 }
 
 a {
   text-decoration: none;
 }
 
-#form-container {
+#sign-in-form-container {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
+  height: 100%;
+  margin-bottom: 18%;
 }
 
-.form-wrap {
+.sign-in-form-wrap {
   background: #fbfbfb;
   padding:10px 25px;
+
 }
 
-.form-wrap h1,
-.form-wrap p {
+.sign-in-form-wrap h1,
+.sign-in-form-wrap p {
   text-align: center;
 }
 
-.form-wrap .form-group {
+.sign-in-form-wrap .form-group {
   margin-top:15px;
   font-size: 12pt;
 }
@@ -39,13 +35,13 @@ a {
 /*
 Label should be turned into a block element because I want label above input type in blocks
 */
-.form-wrap .form-group label {
+.sign-in-form-wrap .form-group label {
   display:block;
   color: #333;
 }
 
 /* padding is needed to make it bigger heigtwise and border for cleaner white look */
-.form-wrap .form-group input {
+.sign-in-form-wrap .form-group input {
   width: 100%;
   padding: 5px;
   border: #ddd 1px solid;
@@ -53,7 +49,7 @@ Label should be turned into a block element because I want label above input typ
   font-size: 14px;
 }
 
-.form-wrap button {
+.sign-in-form-wrap button {
   display:block;
   width: 100%;
   padding: 10px;
@@ -65,13 +61,25 @@ Label should be turned into a block element because I want label above input typ
   cursor: pointer;
 }
 
-.form-wrap button:hover {
+.sign-in-form-wrap button:hover {
   background-color: #1062a1;
 
 }
 
-.form-wrap .bottom-text {
+.sign-in-form-wrap .bottom-text {
   margin-top: 20px;
   font-size: 10pt;
 }
 
+.error-message {
+  color: red;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+footer a {
+  color:black;
+}

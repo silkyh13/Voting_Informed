@@ -8,6 +8,8 @@ html, body {
   font-family: 'Noto Serif', serif;
   line-height: 1.7em;
   background: #2B9CD9;
+  position:relative;
+  min-height: 100%;
 }
 
 a {
@@ -18,7 +20,10 @@ a {
 p {
   margin: 10px 0;
 }
-
+.homepage {
+  position:relative;
+  min-height: 100%;
+}
 /* add in overflow auto so it always show the background and doesnt go outside of it */
 /* padding brings logo and ul closer and the logo is not right against the edge */
 /* also add spaces between Home Issues Connect */
