@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import '../styles/SignIn.css';
-import signInImage from "../img/about1.jpg"
 export default class SignIn extends Component {
 
   constructor(props) {

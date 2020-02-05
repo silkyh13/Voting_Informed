@@ -17,6 +17,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentId:'home',
+      loggedOut: false,
       user: null
     }
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -40,6 +41,24 @@ class App extends React.Component {
     this.setState((state) => ({ currentId: e }))
   }
 
+  loggedOut = event => {
+    axios.get('/api/logout')
+    .then(response => {
+      // handle success
+      this.setState({
+        loggedOut: !this.state.loggedOut,
+      })
+      console.log(response);
+    })
+    .catch(error => {
+      // handle error
+      console.log(error);
+    })
+    .finally(meow => {
+      // always executed
+    });
+  }
+
   render() {
     console.log(this.state.currentId)
     return (
@@ -49,22 +68,25 @@ class App extends React.Component {
           <div id="navbar">
             <div className="container">
               <div className="logo"></div>
+              {this.state.loggedOut ? window.location.pathname="/signin" : null}
                 <ul>
                   <li>
-                    <Link id="home" onClick={this.handleChange} className={
-                      this.state.currentId === 'home' ? 'current' : 'none'
-                    } to="/">Home</Link>
+                    <Link id="home" to="/">Home</Link>
                   </li>
                   <li>
-                    <Link id="issues" onClick={this.handleChange} className={
-                      this.state.currentId === 'issues' ? 'current' : 'none'
-                    } to="/issues">Issues</Link>
+                    <Link id="issues"  to="/issues">Issues</Link>
                   </li>
-                  <li>
-                    <Link id="sign-up" onClick={this.handleChange} className={
-                      this.state.currentId === 'sign-up' ? 'current' : 'none'
-                    } to="/signup">Sign Up</Link>
-                  </li>
+
+                  {!this.state.user ?
+                    <li>
+                      <Link id="sign-up"  to="/signup">Sign Up</Link>
+                    </li>
+                    :
+                    <li>
+                      <Link id="messenger" to="/messenger"onClick={this.loggedOut}>Log Out</Link>
+                    </li>
+                  }
+
                 </ul>
             </div>
           </div>

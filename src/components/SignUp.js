@@ -25,9 +25,10 @@ class Signup extends Component {
       [event.target.id]: event.target.value,
     });
   }
-  submitForm = () => {
+  submitForm = e => {
 
     if (this.state.password === this.state.confirmPassword) {
+      e.preventDefault();
       //axios post request
       //add this.state.firstName this.state.lastName this.state.email this.state.password
       axios.post('/api/user', {
@@ -37,14 +38,17 @@ class Signup extends Component {
         password: this.state.password
       })
       .then(res =>  {
-        this.setState({
-          bullshit: this.state.email
-        });
         console.log(res);
       })
       .catch(error => {
         console.log(error);
+      })
+      .finally(() => {
+        this.setState({
+          bullshit: this.state.email
+        });
       });
+      console.log(this.state.bullshit, this.state.email);
     }
     else {
       document.getElementById("confirmPassword").setCustomValidity("Passwords don't match");
@@ -52,8 +56,6 @@ class Signup extends Component {
   }
 
   render() {
-    let signedUp = this.state.bullshit;
-    console.log(signedUp, this.state.email)
     return (
       <div id="form-container">
         <div className="form-wrap">
@@ -83,7 +85,7 @@ class Signup extends Component {
             <label>Confirm Password</label>
             <input type="password" id="confirmPassword" onChange={this.handleRegister}></input>
             </div>
-            {signedUp === this.state.email ? window.location.pathname="/signin" : <button onClick={this.submitForm} >Sign Up</button>}
+            {this.state.bullshit === this.state.email ? window.location.pathname="/signin" : <button onClick={this.submitForm} >Sign Up</button>}
           </form>
 
           <p className="bottom-text">
