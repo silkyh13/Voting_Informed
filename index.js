@@ -9,7 +9,7 @@ const app = express()
 const port = 8080;
 const User = require("./routes/user");
 const passport = require('./passport');//functions includes: authenticate requests and sessions
-
+const createConnections = require("./sockets/index.js");
 //needs to know database in order to create session
 
 const options = {
@@ -37,4 +37,6 @@ app.use(passport.session());//Session data is not saved in the cookie itself, ju
 
 app.use("/api", User);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+createConnections(server);

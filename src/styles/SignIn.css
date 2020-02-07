@@ -12,7 +12,7 @@ a {
   max-width: 500px;
   margin: 30px auto;
   padding: 20px;
-  margin-bottom: -19px;
+  margin-bottom: -20px;
   /* margin-bottom: 15%; */
 }
 
@@ -81,7 +81,7 @@ Label should be turned into a block element because I want label above input typ
   background: url("../img/about1.jpg") no-repeat center;
   background-size: cover;
   height: 290px;
-  margin-bottom: -25px;
+  margin-bottom: -10px;
 }
 footer {
   color: white;

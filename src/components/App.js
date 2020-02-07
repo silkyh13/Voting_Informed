@@ -76,7 +76,9 @@ class App extends React.Component {
                   <li>
                     <Link id="issues"  to="/issues">Issues</Link>
                   </li>
-
+                  <li>
+                    <Link id="messenger"  to="/messenger">Chat</Link>
+                  </li>
                   {!this.state.user ?
                     <li>
                       <Link id="sign-up"  to="/signup">Sign Up</Link>
