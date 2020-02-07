@@ -1,12 +1,11 @@
 .messenger {
-  margin: 50px auto 70px;
+  margin: 50px auto;
   overflow: auto;
-  background-color: rgb(61, 61, 189);
   width: 600px;
 }
 .messages {
   width: 600px;
-  height: 513px;
+  height: 500px;
   margin: 0px auto;
   border: 1px solid black;
   display: flex;
@@ -79,16 +78,55 @@
   color: white;
 }
 
+
+/* message-form */
+#message-form {
+  width: 100%;
+}
+#message-form .form-group {
+  margin-bottom: 20px;
+  margin-top:20px;
+
+}
+
+#message-form label {
+  display:block;
+  margin-bottom: 5px;
+}
+
+/* textarea border is darker than input so to make them all the same, use border: 1px offwhite solid */
+#message-form input,
+#message-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px #ddd solid;
+}
+
+/* make the text box for content of message form bigger */
+#message-form textarea {
+  height: 60px;
+}
+
+
+#message-form input:focus,
+#message-form textarea:focus {
+  outline: none;
+  border-color: #1062a1;
+}
+
 .messenger button {
   display:block;
-  width: 100%;
+  width: 20%;
   padding: 8px;
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: 3.4px;
-  margin-top: 30px;
-  margin-bottom: 20px;
   background-color: #1688e0;
+  border: none;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1062a1;
 }
