@@ -8,6 +8,7 @@ const path = require('path');
 const app = express()
 const port = 8080;
 const User = require("./routes/user");
+const Message = require("./routes/messages.js");
 const passport = require('./passport');//functions includes: authenticate requests and sessions
 const createConnections = require("./sockets/index.js");
 //needs to know database in order to create session
@@ -36,6 +37,7 @@ app.use(passport.initialize());
 app.use(passport.session());//Session data is not saved in the cookie itself, just the session ID. Session data is stored server-side.
 
 app.use("/api", User);
+app.use("/api", Message);
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 

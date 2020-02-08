@@ -30,9 +30,21 @@ const User = sequelize.define("user", {
         allowNull: false
     }
 })
+const Message = sequelize.define("message", {
+    content: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    }
+})
+
+//creates relationship between User and Message table AND get everything currently associated with this,
+User.hasMany(Message);
+//adds foreign key to User table
+Message.belongsTo(User);
 //translates code into sql
 sequelize.sync();
 
 module.exports = {
     User,
+    Message
 }
