@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../styles/Messenger.css';
+import {
+  Link
+} from "react-router-dom";
 import io from 'socket.io-client';
+const socket = io("http://localhost:3005");
 
 export default class Messenger extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loggedOut: false,
-      message: ''
+      message: '',
     }
   }
+
 
   handleMessage = e => {
     this.setState({
@@ -19,6 +24,7 @@ export default class Messenger extends Component {
       console.log(this.state.message)
     })
   }
+
   loggedOut = event => {
     axios.get('/api/logout')
     .then(response => {
@@ -37,10 +43,14 @@ export default class Messenger extends Component {
     });
   }
   render () {
+
     return (
 
       <div className="messenger">
-
+        {this.props.userName ?
+          <h1 className="header">WELCOME <span className="larger">{this.props.userName}</span></h1> :
+          <h2><Link className="link" to="/signin">Sign in Here</Link></h2>
+        }
         <ol className="messages">
           <li className="mine"><span>Hi, babe!</span></li>
           <li className="mine"><span>I have something for you.</span></li>
@@ -57,9 +67,7 @@ export default class Messenger extends Component {
                 <label for="message">Message</label>
                 <textarea name="message" id="message" onChange={this.handleMessage}></textarea>
               </div>
-
               <button type="submit" className="btn">Submit</button>
-
             </form>
           </div>
         </section>

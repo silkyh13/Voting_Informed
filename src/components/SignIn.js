@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Messenger from './Messenger';
 import '../styles/SignIn.css';
 export default class SignIn extends Component {
 
@@ -8,9 +9,11 @@ export default class SignIn extends Component {
     this.state = {
       email: '',
       password: '',
-      error: false
+      error: false,
+      loggedInUser: ''
     }
   }
+
 
   handleSignIn = event => {
     this.setState({
@@ -43,6 +46,7 @@ export default class SignIn extends Component {
       console.log(isError);
 
     });
+
       // if(isError){
       //   document.getElementById("password").setCustomValidity("Sign in error occurred");
       // }

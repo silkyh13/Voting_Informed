@@ -18,7 +18,8 @@ class App extends React.Component {
     this.state = {
       currentId:'home',
       loggedOut: false,
-      user: null
+      user: null,
+      userName: ''
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +29,8 @@ class App extends React.Component {
     axios.get("/api/user")
     .then(res => {
       this.setState({
-        user: res.data
+        user: res.data,
+        userName: res.data.firstName
       }, () => {
         console.log('who is the user?', this.state.user)
       })
@@ -94,7 +96,7 @@ class App extends React.Component {
           </div>
           <Switch>
             <Route path="/messenger">
-              <Messenger user={this.state.user} />
+              <Messenger userName={this.state.userName} />
             </Route>
             <Route path="/issues">
               <Issues />

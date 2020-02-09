@@ -1,5 +1,4 @@
 const User = require("../database/index").User;
-const Messages = require("../database/index").Messages;
 const bcrypt = require("bcrypt");
 //creates new user and hashes password
 //connects to database

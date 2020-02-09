@@ -30,6 +30,9 @@ const User = sequelize.define("user", {
         allowNull: false
     }
 })
+/* How to post messages in database and retrieve it on client?
+    Creating a messages table that has a many to one relationship between messages and users respectively
+*/
 const Message = sequelize.define("message", {
     content: {
         type: Sequelize.TEXT,
@@ -46,5 +49,6 @@ sequelize.sync();
 
 module.exports = {
     User,
-    Message
+    Message,
+    Sequelize
 }
