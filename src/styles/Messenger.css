@@ -1,3 +1,4 @@
+/* whole parent div */
 .messenger {
   margin: 0px auto;
   overflow: auto;
@@ -99,7 +100,7 @@
 .messages li span {
   background: #eee;
   padding: 8px;
-  position: relative;
+  /* position: relative; */
 }
 .messages li p {
   font-size: 12px;
@@ -126,14 +127,13 @@
 .messages li.mine p {
   text-align: right;
 }
-/* message-form */
+/* section for the message input form  */
 #message-form {
   width: 100%;
 }
 #message-form .form-group {
   margin-bottom: 20px;
   margin-top:20px;
-
 }
 
 #message-form label {
@@ -165,6 +165,7 @@
   display:block;
   width: 20%;
   padding: 8px;
+  margin-bottom: 20px;
   font-size: 13px;
   letter-spacing: 3.4px;
   background-color: #1688e0;
