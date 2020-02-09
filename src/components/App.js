@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId:'home',
+      currentId: 'home',
       loggedOut: false,
       user: null,
       userName: ''
@@ -27,15 +27,15 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get("/api/user")
-    .then(res => {
-      this.setState({
-        user: res.data,
-        userName: res.data.firstName
-      }, () => {
-        console.log('who is the user?', this.state.user)
+      .then(res => {
+        this.setState({
+          user: res.data,
+          userName: res.data.firstName
+        }, () => {
+          console.log('who is the user?', this.state.user)
+        })
       })
-    })
-    .catch(err => console.error(err));
+      .catch(err => console.error(err));
   }
 
   handleChange(event) {
@@ -45,20 +45,20 @@ class App extends React.Component {
 
   loggedOut = event => {
     axios.get('/api/logout')
-    .then(response => {
-      // handle success
-      this.setState({
-        loggedOut: !this.state.loggedOut,
+      .then(response => {
+        // handle success
+        this.setState({
+          loggedOut: !this.state.loggedOut,
+        })
+        console.log(response);
       })
-      console.log(response);
-    })
-    .catch(error => {
-      // handle error
-      console.log(error);
-    })
-    .finally(meow => {
-      // always executed
-    });
+      .catch(error => {
+        // handle error
+        console.log(error);
+      })
+      .finally(meow => {
+        // always executed
+      });
   }
 
   render() {
@@ -70,39 +70,39 @@ class App extends React.Component {
           <div id="navbar">
             <div className="container">
               <div className="logo"></div>
-              {this.state.loggedOut ? window.location.pathname="/signin" : null}
-                <ul>
+              {this.state.loggedOut ? window.location.pathname = "/signin" : null}
+              <ul>
+                <li>
+                  <Link id="home" to="/">Home</Link>
+                </li>
+                <li>
+                  <Link id="issues" to="/issues">Issues</Link>
+                </li>
+                <li>
+                  <Link id="messenger" to="/messenger">Chat</Link>
+                </li>
+                {!this.state.user ?
                   <li>
-                    <Link id="home" to="/">Home</Link>
+                    <Link id="sign-up" to="/signup">Sign Up</Link>
                   </li>
+                  :
                   <li>
-                    <Link id="issues"  to="/issues">Issues</Link>
+                    <Link id="messenger" to="/messenger" onClick={this.loggedOut}>Log Out</Link>
                   </li>
-                  <li>
-                    <Link id="messenger"  to="/messenger">Chat</Link>
-                  </li>
-                  {!this.state.user ?
-                    <li>
-                      <Link id="sign-up"  to="/signup">Sign Up</Link>
-                    </li>
-                    :
-                    <li>
-                      <Link id="messenger" to="/messenger"onClick={this.loggedOut}>Log Out</Link>
-                    </li>
-                  }
+                }
 
-                </ul>
+              </ul>
             </div>
           </div>
           <Switch>
             <Route path="/messenger">
-              <Messenger userName={this.state.userName} />
+              <Messenger user={this.state.user} userName={this.state.userName} />
             </Route>
             <Route path="/issues">
               <Issues />
             </Route>
             <Route path="/signin">
-              <SignIn user={this.state.user} componentDidMount={this.componentDidMount}/>
+              <SignIn user={this.state.user} componentDidMount={this.componentDidMount} />
             </Route>
             <Route path="/SignUp">
               <SignUp />

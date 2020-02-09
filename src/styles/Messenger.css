@@ -1,7 +1,7 @@
 .messenger {
   margin: 0px auto;
   overflow: auto;
-  width: 600px;
+  width: 800px;
 }
 
 .messenger .header {
@@ -45,7 +45,7 @@
 
 
 .messages {
-  width: 600px;
+  width: 800px;
   height: 500px;
   margin: 0px auto;
   border: 1px solid black;
@@ -101,7 +101,10 @@
   padding: 8px;
   position: relative;
 }
-
+.messages li p {
+  font-size: 12px;
+  margin: 2px 0;
+}
 .messages li span:before {
   content: '';
   position: absolute;
@@ -117,9 +120,12 @@
 .messages li.mine span {
   background: none;
   color: white;
+
 }
 
-
+.messages li.mine p {
+  text-align: right;
+}
 /* message-form */
 #message-form {
   width: 100%;

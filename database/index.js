@@ -9,7 +9,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, pr
 sequelize.authenticate().then(() => {
     console.log("Sequelize connection established");
 })
-.catch(err => console.error("Unable to connect:", err));
+    .catch(err => console.error("Unable to connect:", err));
 
 const User = sequelize.define("user", {
     firstName: {
