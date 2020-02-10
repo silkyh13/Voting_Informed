@@ -16,6 +16,7 @@
 }
 
 .messenger h2 {
+  padding-top: 30px;
   padding-bottom: 10px;
 }
 
@@ -72,14 +73,15 @@
   overflow: hidden;
   border-style: solid;
   border-color: white;
-  border-width: 2px 16px 2px 8px;
+  border-width: 2px 8px 2px 8px;
   flex: 0 0 auto;
+
 }
 
 .messages li.mine {
   flex-direction: row;
   border-right-width: 8px;
-  border-left-width: 16px;
+  /* border-left-width: 16px; */
 }
 
 .messages li:first-child {
@@ -177,4 +179,8 @@
 
 .btn:hover {
   background-color: #1062a1;
+}
+
+.none {
+  margin-bottom: 40px;
 }

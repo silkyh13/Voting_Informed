@@ -1,6 +1,7 @@
 const Message = require("../database/index").Message;
 const Op = require("sequelize").Op;//$between
 const User = require('../database/index').User
+const moment = require("moment");
 //basic insertion for message table
 const addMessage = (userId, content, cb) => {
 
@@ -36,9 +37,16 @@ const getMessages = async (cb) => {
     //res => array of user objects
     formatted().then(res => {
         const formatted = messages.map((message, index) => {
+            // message.createdAt.getHours() % 12 //8:22
+            //2020-02-09T20:10:58.000Z
+            //date.split("T")[1].slice(4, )
+            let hour = message.createdAt.getHours();
+            let min = message.createdAt.getMinutes();
+            min = min < 10 ? '0' + min : min;
+            const date = moment((hour + ":" + min).toString(), "HH:mm").format("hh:mm a");
             return {
                 message: message.content,
-                createdAt: message.createdAt,
+                createdAt: date,
                 user: {
                     id: res[index][0].id,
                     firstName: res[index][0].firstName,
@@ -47,7 +55,7 @@ const getMessages = async (cb) => {
                 }
             }
         })
-        cb(null, formatted);
+        cb(null, formatted.reverse());
     })
 }
 
