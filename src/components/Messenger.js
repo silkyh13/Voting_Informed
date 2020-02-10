@@ -92,9 +92,11 @@ export default class Messenger extends Component {
           <h2><Link className="link" to="/signin">Sign in Here</Link></h2>
         }
         <ol className="messages">
-
+          <li><span>What is it?</span></li>
           {this.state.messages.map((item, index) =>
-            item.user.email === this.props.user.email ? (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) : (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
+            item.user.email === this.props.user.email ?
+              (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
+              (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
 
           )}
         </ol>
@@ -104,7 +106,7 @@ export default class Messenger extends Component {
               <form action="process.php">
                 <div className="form-group">
                   <label for="message">Message</label>
-                  <textarea name="message" id="message" onChange={this.handleMessage}></textarea>
+                  <textarea name="message" id="message" onChange={this.handleMessage} ></textarea>
                 </div>
                 <button onClick={this.handleSubmit} type="submit" className="btn">Submit</button>
               </form>
