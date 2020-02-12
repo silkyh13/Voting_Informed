@@ -28,7 +28,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("/api/user")
       .then(res => {
-        if (!res.data) {
+        if (typeof res.data === 'object') {
           this.setState({
             user: res.data,
             userName: res.data.firstName
