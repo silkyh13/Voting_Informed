@@ -6,7 +6,7 @@ function rando(start, stop) {
   return start + Math.round(Math.random() * (stop - start));
 }
 
-const seedUsers = () => {
+const seed = () => {
   let firstname, lastname, eMail, pass;
   for (let i = 0; i < 4; i++) {
     firstname = casual.first_name;
@@ -14,21 +14,31 @@ const seedUsers = () => {
     eMail = casual.email;
     pass = casual.password;
     user.registerUser(firstname, lastname, eMail, pass, (err, response) => {
-      console.log('did it')
+      console.log('did it for users')
     })
   }
-}
-const seedMessages = () => {
-  let user;
+  let id;
   let message;
   for (let i = 0; i < 15; i++) {
-    user = rando(1, 4);
+    id = rando(0, 4);
     message = casual.sentences(rando(2, 5));
-    messages.addMessage(user, message, (err, response) => {
-      console.log('did it')
+    messages.addMessage(id, message, (err, response) => {
+      console.log('did it for messages')
     })
   }
 }
+seed();
+// const seedMessages = () => {
+//   let user;
+//   let message;
+//   for (let i = 0; i < 15; i++) {
+//     user = rando(0, 4);
+//     message = casual.sentences(rando(2, 5));
+//     messages.addMessage(user, message, (err, response) => {
+//       console.log('did it for messages')
+//     })
+//   }
+// }
 
-seedMessages();
-seedUsers();
+// seedUsers();
+// seedMessages();

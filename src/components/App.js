@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       currentId: 'home',
       loggedOut: false,
-      user: null,
+      user: {},
       userName: ''
     }
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -28,12 +28,13 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("/api/user")
       .then(res => {
-        this.setState({
-          user: res.data,
-          userName: res.data.firstName
-        }, () => {
-          console.log('who is the user?', this.state.user)
-        })
+        if (!res.data) {
+          this.setState({
+            user: res.data,
+            userName: res.data.firstName
+          })
+        }
+
       })
       .catch(err => console.error(err));
   }

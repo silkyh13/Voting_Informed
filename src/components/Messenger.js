@@ -24,7 +24,7 @@ export default class Messenger extends Component {
         // handle success
         this.setState({
           messages: response.data
-        })
+        }, () => { console.log(this.state.messages) })
       })
       .catch(error => {
         // handle error
@@ -93,11 +93,9 @@ export default class Messenger extends Component {
         }
         <ol className="messages">
 
-          {this.state.messages.length === 0 ?
-            <li><span>What is it?</span></li> :
-
+          {
             this.state.messages.map((item, index) => {
-              console.log('what is the item', item)
+              console.log(item.user.email, 'what is email', this.props.user.email)
               return item.user.email === this.props.user.email ?
                 (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
                 (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
