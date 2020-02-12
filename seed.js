@@ -31,4 +31,4 @@ const seedMessages = () => {
 }
 
 seedMessages();
-// seedUsers();
+seedUsers();
