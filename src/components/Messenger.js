@@ -83,7 +83,7 @@ export default class Messenger extends Component {
   }
 
   render() {
-
+    console.log('what is the item', this.state.messages)
     return (
 
       <div className="messenger">
@@ -92,13 +92,18 @@ export default class Messenger extends Component {
           <h2><Link className="link" to="/signin">Sign in Here</Link></h2>
         }
         <ol className="messages">
-          <li><span>What is it?</span></li>
-          {this.state.messages.map((item, index) =>
-            item.user.email === this.props.user.email ?
-              (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
-              (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
 
-          )}
+          {this.state.messages.length === 0 ?
+            <li><span>What is it?</span></li> :
+
+            this.state.messages.map((item, index) => {
+              console.log('what is the item', item)
+              return item.user.email === this.props.user.email ?
+                (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
+                (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
+            })
+          }
+
         </ol>
         {this.props.userName ?
           <section id="message-form" >

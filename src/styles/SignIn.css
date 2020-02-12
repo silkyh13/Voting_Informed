@@ -78,10 +78,11 @@ Label should be turned into a block element because I want label above input typ
 }
 
 .sign-in-image {
-  background: url("../img/about1.jpg") no-repeat center;
+  background: url("../img/bernieForThePeople.jpg") no-repeat center;
   background-size: cover;
-  height: 290px;
-  margin-bottom: -10px;
+  height: 500px;
+  width: auto;
+  margin-top: 40px;
 }
 footer {
   color: white;
