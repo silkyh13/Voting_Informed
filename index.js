@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const session = require('express-session');//????
-const MySQLStore = require('express-mysql-session')(session);//????
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 const path = require('path');
 const app = express()
 const port = 8080;
@@ -27,7 +27,7 @@ app.use(
     secret: process.env.DB_TOKEN_SECRET,
     resave: false,//Forces the session to be saved back to the session store, even session nvr modified
     saveUninitialized: false,//Forces a session that is "uninitialized" to be saved to the store.
-    cookie: { secure: false, maxAge: 259200000},
+    cookie: { secure: false, maxAge: 259200000 },
     store: sessionStore
   })
 );

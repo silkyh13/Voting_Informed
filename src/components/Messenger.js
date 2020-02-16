@@ -87,36 +87,41 @@ export default class Messenger extends Component {
     return (
 
       <div className="messenger">
-        {this.props.userName ?
-          <h1 className="header">WELCOME <span className="larger">{this.props.userName}</span></h1> :
-          <h2><Link className="link" to="/signin">Sign in Here</Link></h2>
-        }
-        <ol className="messages">
-
-          {
-            this.state.messages.map((item, index) => {
-              console.log(item.user.email, 'what is email', this.props.user.email)
-              return item.user.email === this.props.user.email ?
-                (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
-                (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
-            })
+        <div className='headers'>
+          {this.props.userName ?
+            <h1 className="header">WELCOME <span className="larger">{this.props.userName}</span></h1> :
+            <h2><Link className="link" to="/signin">Sign in Here</Link></h2>
           }
+        </div>
 
-        </ol>
-        {this.props.userName ?
-          <section id="message-form" >
-            <div className="container">
-              <form action="process.php">
-                <div className="form-group">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" onChange={this.handleMessage} ></textarea>
-                </div>
-                <button onClick={this.handleSubmit} type="submit" className="btn">Submit</button>
-              </form>
-            </div>
-          </section> :
-          <div className='none'></div>
-        }
+        <div className="chat">
+          <ol className="messages">
+
+            {
+              this.state.messages.map((item, index) => {
+                return item.user.email === this.props.user.email ?
+                  (<li className="mine"><span>{item.message}<p>{item.createdAt}</p></span></li>) :
+                  (<li><span><p>{item.user.firstName + ": "}</p>{item.message}<p>{item.createdAt}</p></span></li>)
+              })
+            }
+
+          </ol>
+          {this.props.userName ?
+            <section id="message-form" >
+              <div className="container">
+                <form action="process.php">
+                  <div className="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" onChange={this.handleMessage} ></textarea>
+                  </div>
+                  <button onClick={this.handleSubmit} type="submit" className="btn">Submit</button>
+                </form>
+              </div>
+            </section> :
+            <div className='none'></div>
+          }
+        </div>
+
       </div>
     );
   }

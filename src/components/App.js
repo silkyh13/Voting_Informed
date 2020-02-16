@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       currentId: 'home',
       loggedOut: false,
-      user: {},
+      user: null,
       userName: ''
     }
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -28,12 +28,11 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("/api/user")
       .then(res => {
-        if (typeof res.data === 'object') {
-          this.setState({
-            user: res.data,
-            userName: res.data.firstName
-          })
-        }
+
+        this.setState({
+          user: res.data,
+          userName: res.data.firstName
+        })
 
       })
       .catch(err => console.error(err));
@@ -105,7 +104,7 @@ class App extends React.Component {
             <Route path="/signin">
               <SignIn user={this.state.user} componentDidMount={this.componentDidMount} />
             </Route>
-            <Route path="/SignUp">
+            <Route path="/signup">
               <SignUp />
             </Route>
             <Route path="/">
