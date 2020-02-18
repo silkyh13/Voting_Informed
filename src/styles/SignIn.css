@@ -9,17 +9,16 @@ a {
 }
 
 #sign-in-form-container {
-  max-width: 500px;
-  margin: 30px auto;
+  max-width: 550px;
+  margin: 8vh auto;
+  margin-bottom: -3vh;
   padding: 20px;
-  margin-bottom: -20px;
   /* margin-bottom: 15%; */
 }
 
 .sign-in-form-wrap {
   background: #fbfbfb;
-  padding:10px 25px;
-
+  padding: 10px 25px;
 }
 
 .sign-in-form-wrap h1,
@@ -28,7 +27,7 @@ a {
 }
 
 .sign-in-form-wrap .form-group {
-  margin-top:15px;
+  margin-top: 15px;
   font-size: 12pt;
 }
 
@@ -36,7 +35,7 @@ a {
 Label should be turned into a block element because I want label above input type in blocks
 */
 .sign-in-form-wrap .form-group label {
-  display:block;
+  display: block;
   color: #333;
 }
 
@@ -50,7 +49,7 @@ Label should be turned into a block element because I want label above input typ
 }
 
 .sign-in-form-wrap button {
-  display:block;
+  display: block;
   width: 100%;
   padding: 8px;
   font-size: 15px;
@@ -65,7 +64,6 @@ Label should be turned into a block element because I want label above input typ
 
 .sign-in-form-wrap button:hover {
   background-color: #1062a1;
-
 }
 
 .sign-in-form-wrap .bottom-text {
@@ -78,11 +76,10 @@ Label should be turned into a block element because I want label above input typ
 }
 
 .sign-in-image {
-  background: url("../img/bernieForThePeople.jpg") no-repeat center;
-  background-size: cover;
-  height: 500px;
+  background: url("../img/bernieForThePeople.jpg") no-repeat center center/cover;
+  height: 45vh;
   width: auto;
-  margin-top: 40px;
+  margin-bottom: -1vh;
 }
 footer {
   color: white;
@@ -90,5 +87,5 @@ footer {
   margin-top: 10px;
 }
 footer a {
-  color:black;
+  color: black;
 }

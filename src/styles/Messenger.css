@@ -1,36 +1,28 @@
 .messenger {
-  margin: 0px auto;
+  margin: 2vh auto;
   overflow: auto;
-  /* height: 200vh; */
-  /* width: 400px; */
-
+  width: 500px;
 }
 .messenger .headers {
-  min-width: 50%;
-  width: 400px;
+  min-width: 60%;
   margin: auto;
   max-width: 1100px;
   overflow: auto;
   color: #0f2862;
   letter-spacing: 3.4px;
   font-stretch: extra-expanded;
-  font-family:'Noto Serif', monospace;
+  font-family: "Noto Serif", monospace;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
-
-.messenger h2 {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.messenger .link  {
+.messenger .name-of-user {
   border-bottom: 1px solid #0f2862;
   color: #0f2862;
-  padding-bottom: .25em;
   text-decoration: none;
 }
 
-.messenger .link:hover {
+.messenger .name-of-user:hover {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
   background-position: bottom;
   background-repeat: repeat-x;
@@ -38,20 +30,20 @@
   border-bottom: 0;
   border-bottom: 1px solid #453886;
   color: #453886;
-  padding-bottom: .3em;
+  padding-bottom: 0.3em;
   text-decoration: none;
 }
-.messenger .header .larger{
+.messenger .header .larger {
   letter-spacing: 1.4px;
   color: #4f5f76;
   font-style: oblique;
-  font-family:'Noto Serif', monospace;
+  font-family: "Noto Serif", monospace;
 }
 
 .messages {
   min-width: 50%;
-  width: 400px;
-  height: 70vh;
+  width: 500px;
+  height: 50vh;
   margin: 0 auto;
   border: 1px solid black;
   display: flex;
@@ -59,19 +51,22 @@
   font: 16px/1.3 sans-serif;
   overflow: auto;
   padding: 0;
-  background: linear-gradient(rgb(255, 143, 178) 0%, rgb(167, 151, 255) 50%, rgb(0, 229, 255) 100%);
+  background: linear-gradient(
+    rgb(255, 143, 178) 0%,
+    rgb(167, 151, 255) 50%,
+    rgb(0, 229, 255) 100%
+  );
 }
 
 .messages:after {
-  content: '';
+  content: "";
   background: white;
   flex: 1;
   pointer-events: none;
 }
 
-
 .messages:after {
-  content: '';
+  content: "";
   background: white;
   flex: 1;
   pointer-events: none;
@@ -103,7 +98,7 @@
 }
 
 .messages li:before {
-  content: '';
+  content: "";
   flex: 1;
   background: white;
   pointer-events: none;
@@ -116,7 +111,7 @@
 }
 
 .messages li span:before {
-  content: '';
+  content: "";
   position: absolute;
   left: -8px;
   top: -8px;
@@ -140,16 +135,17 @@
 }
 /* message-form */
 #message-form {
-  width: 100%;
+  /* min-width: 50%; */
+  width: 500px;
+  margin: auto;
 }
 #message-form .form-group {
   margin-bottom: 20px;
-  margin-top:20px;
-
+  margin-top: 20px;
 }
 
 #message-form label {
-  display:block;
+  display: block;
   margin-bottom: 5px;
 }
 
@@ -159,14 +155,13 @@
   width: 100%;
   padding: 10px;
   border: 1px #ddd solid;
-  font-size:14px;
+  font-size: 14px;
 }
 
 /* make the text box for content of message form bigger */
 #message-form textarea {
   height: 60px;
 }
-
 
 #message-form input:focus,
 #message-form textarea:focus {
@@ -175,9 +170,10 @@
 }
 
 .messenger button {
-  display:block;
+  display: block;
   width: 20%;
   padding: 8px;
+  margin-bottom: 6vh;
   font-size: 13px;
   letter-spacing: 3.4px;
   background-color: #1688e0;
@@ -191,6 +187,6 @@
   background-color: #1062a1;
 }
 
-.none {
-  margin-bottom: 40px;
+.margin-bottom {
+  margin-bottom: 15vh;
 }

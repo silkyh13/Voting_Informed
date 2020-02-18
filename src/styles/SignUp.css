@@ -8,7 +8,6 @@ body {
   /* line-height add spaces in between labels and input box and other divs */
   font-family: "Raleway", sans-serif;
   line-height: 1.8;
-
 }
 
 a {
@@ -17,13 +16,14 @@ a {
 
 #form-container {
   max-width: 550px;
-  margin: 45px auto;
+  margin: 8vh auto;
+  margin-bottom: 8vh;
   padding: 20px;
 }
 
 .form-wrap {
   background: #fbfbfb;
-  padding:10px 25px;
+  padding: 10px 25px;
 }
 
 .form-wrap h1,
@@ -32,7 +32,7 @@ a {
 }
 
 .form-wrap .form-group {
-  margin-top:15px;
+  margin-top: 15px;
   font-size: 12pt;
 }
 
@@ -40,7 +40,7 @@ a {
 Label should be turned into a block element because I want label above input type in blocks
 */
 .form-wrap .form-group label {
-  display:block;
+  display: block;
   color: #333;
 }
 
@@ -54,7 +54,7 @@ Label should be turned into a block element because I want label above input typ
 }
 
 .form-wrap button {
-  display:block;
+  display: block;
   width: 100%;
   padding: 8px;
   font-size: 15px;
@@ -69,11 +69,9 @@ Label should be turned into a block element because I want label above input typ
 
 .form-wrap button:hover {
   background-color: #1062a1;
-
 }
 
 .form-wrap .bottom-text {
   margin-top: 20px;
   font-size: 10pt;
 }
-
