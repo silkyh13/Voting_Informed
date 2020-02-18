@@ -26,6 +26,8 @@ export default class Messenger extends Component {
             messages: response.data
           },
           () => {
+            const list = document.getElementsByClassName("messages")[0];
+            list.scrollTop = list.scrollHeight;
             console.log(this.state.messages);
           }
         );
@@ -38,12 +40,21 @@ export default class Messenger extends Component {
     // always executed
     socket.on("chat-message", data => {
       let messages = this.state.messages;
+      let element = document.getElementsByClassName("messages")[0];
+      // element.scrollTop = element.scrollHeight;
       messages.push(data);
       this.setState(
         {
           messages
         },
         () => {
+          const list = document.getElementsByClassName("messages")[0];
+          //subtract more to get a bigger range.
+          if (list.scrollTop >= element.scrollHeight - 700) {
+            list.scrollTop = list.scrollHeight;
+          } else {
+          }
+
           console.log(this.state.messages);
         }
       );
