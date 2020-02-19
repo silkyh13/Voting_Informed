@@ -39,7 +39,7 @@ p {
   position: sticky;
   top: 0;
   background: white;
-  overflow: auto;
+  /* overflow: auto; */
   height: 68px;
 }
 /* letters of the Home etc */
