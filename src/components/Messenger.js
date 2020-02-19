@@ -68,6 +68,7 @@ export default class Messenger extends Component {
         content: this.state.message
       })
       .then(function(response) {
+        document.getElementById("message").value = "";
         console.log(response.data.createdAt);
       })
       .catch(function(error) {
@@ -151,6 +152,10 @@ export default class Messenger extends Component {
                   <textarea
                     name="message"
                     id="message"
+                    type="text"
+                    rows="5"
+                    cols="60"
+                    placeholder="Type here"
                     onChange={this.handleMessage}
                   ></textarea>
                 </div>
