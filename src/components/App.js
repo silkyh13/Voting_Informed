@@ -11,13 +11,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: "home",
       loggedOut: false,
       user: null,
       userName: ""
     };
     this.componentDidMount = this.componentDidMount.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -30,11 +28,6 @@ class App extends React.Component {
         });
       })
       .catch(err => console.error(err));
-  }
-
-  handleChange(event) {
-    let e = event.target.getAttribute("id");
-    this.setState(state => ({ currentId: e }));
   }
 
   loggedOut = event => {
