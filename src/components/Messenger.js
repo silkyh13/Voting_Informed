@@ -4,10 +4,10 @@ import "../styles/Messenger.css";
 import { Link } from "react-router-dom";
 import io from "socket.io-client";
 import moment from "moment";
-// const socket = io("http://localhost:3000");
-const socket = io(
-  "http://ec2-3-19-26-137.us-east-2.compute.amazonaws.com:8080"
-);
+const socket = io("http://localhost:3005");
+// const socket = io(
+//   "http://ec2-3-19-26-137.us-east-2.compute.amazonaws.com:8080"
+// );
 export default class Messenger extends Component {
   constructor(props) {
     super(props);

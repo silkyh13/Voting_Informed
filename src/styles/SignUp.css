@@ -22,13 +22,14 @@ a {
 }
 
 .form-wrap {
-  background: #fbfbfb;
+  background: rgba(19, 35, 47, 0.9);
   padding: 10px 25px;
 }
 
 .form-wrap h1,
 .form-wrap p {
   text-align: center;
+  color: white;
 }
 
 .form-wrap .form-group {
@@ -41,7 +42,7 @@ Label should be turned into a block element because I want label above input typ
 */
 .form-wrap .form-group label {
   display: block;
-  color: #333;
+  color: white;
 }
 
 /* padding is needed to make it bigger heigtwise and border for cleaner white look */
@@ -74,4 +75,16 @@ Label should be turned into a block element because I want label above input typ
 .form-wrap .bottom-text {
   margin-top: 20px;
   font-size: 10pt;
+}
+
+.form-container p {
+  color: red;
+}
+
+.bottom-text {
+  font-weight: 900;
+}
+
+.bottom-text a {
+  color: rgb(87, 137, 230);
 }

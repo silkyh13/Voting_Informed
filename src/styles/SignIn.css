@@ -17,13 +17,14 @@ a {
 }
 
 .sign-in-form-wrap {
-  background: #fbfbfb;
+  background: rgba(19, 35, 47, 0.9);
   padding: 10px 25px;
 }
 
 .sign-in-form-wrap h1,
 .sign-in-form-wrap p {
   text-align: center;
+  color: white;
 }
 
 .sign-in-form-wrap .form-group {
@@ -36,7 +37,7 @@ Label should be turned into a block element because I want label above input typ
 */
 .sign-in-form-wrap .form-group label {
   display: block;
-  color: #333;
+  color: white;
 }
 
 /* padding is needed to make it bigger heigtwise and border for cleaner white look */
@@ -77,15 +78,17 @@ Label should be turned into a block element because I want label above input typ
 
 .sign-in-image {
   background: url("../img/bernieForThePeople.jpg") no-repeat center center/cover;
-  height: 45vh;
+  height: 50vh;
   width: auto;
-  margin-bottom: -1vh;
+  margin-bottom: -4vh;
 }
 footer {
-  color: white;
+  color: black;
+  bottom: 0;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 4vh;
 }
 footer a {
-  color: black;
+  color: rgb(87, 137, 230);
+  font-weight: 900;
 }
