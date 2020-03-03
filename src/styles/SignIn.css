@@ -75,6 +75,55 @@ Label should be turned into a block element because I want label above input typ
 .error-message {
   color: red;
 }
+/** Speech bubble with drop shadow and border */
+
+.speech-bubble-ds {
+  background: #efefef;
+  border: 1px solid #a7a7a7;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  line-height: 1.3;
+  /* margin: 0 auto 40px; */
+  max-width: 400px;
+  padding: 15px;
+  position: absolute;
+  top: 12%;
+  right: 61%;
+}
+
+.speech-bubble-ds p {
+  margin-bottom: 10px;
+}
+.speech-bubble-ds p:last-of-type {
+  margin-bottom: 0;
+}
+
+.speech-bubble-ds-arrow {
+  border-left: 21px solid transparent;
+  border-top: 20px solid rgba(0, 0, 0, 0.2);
+  bottom: -25px;
+  position: absolute;
+  right: 15px;
+}
+.speech-bubble-ds-arrow::before {
+  border-left: 23px solid transparent;
+  border-top: 23px solid #a7a7a7;
+  bottom: 2px;
+  content: "";
+  position: absolute;
+  right: 5px;
+}
+.speech-bubble-ds-arrow::after {
+  border-left: 21px solid transparent;
+  border-top: 21px solid #efefef;
+  bottom: 4px;
+  content: "";
+  position: absolute;
+  right: 6px;
+}
 
 .sign-in-image {
   background: url("../img/bernieForThePeople.jpg") no-repeat center center/cover;
@@ -91,4 +140,71 @@ footer {
 footer a {
   color: rgb(87, 137, 230);
   font-weight: 900;
+}
+
+.Icon {
+  right: 5%;
+  top: -10%;
+  position: absolute;
+  width: 22px;
+  height: 50px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.Icon span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 23px;
+  /* height gives thickness*/
+  height: 8px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  transform: rotate(0deg);
+  transition: 0.2s ease-in-out;
+}
+
+.Icon span:nth-child(1),
+.Icon span:nth-child(3) {
+  width: 50%;
+  transform: rotate(45deg);
+}
+
+.Icon span:nth-child(1) {
+  left: 1px;
+  top: 19px;
+}
+
+.Icon span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.Icon span:nth-child(3) {
+  left: 11px;
+  top: 27px;
+}
+
+.Icon.open span:nth-child(1),
+.Icon.open span:nth-child(3) {
+  left: -1px;
+}
+
+.Icon.open span:nth-child(1) {
+  top: 15px;
+  transform: rotate(135deg);
+}
+
+.Icon.open span:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.Icon.open span:nth-child(3) {
+  top: 31px;
+  transform: rotate(45deg);
+}
+.none {
+  display: none;
 }
