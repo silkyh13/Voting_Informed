@@ -38,7 +38,8 @@ p {
 #navbar {
   position: sticky;
   top: 0;
-  background: white;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ececec;
   /* overflow: auto; */
   height: 68px;
 }
@@ -57,19 +58,20 @@ p {
 #navbar ul {
   list-style: none;
   float: right;
+  line-height: 60px;
 }
 #navbar ul li {
   float: left;
 }
 
 #navbar ul li a {
-  display: block;
-  padding: 20px;
+  padding: 0 10px;
+  font-size: 1.2em;
   text-align: center;
 }
 #navbar ul li a:hover,
 #navbar ul li a.current {
-  background: #1688e0;
+  /* background: #1688e0; */
   color: #00324d;
 }
 
